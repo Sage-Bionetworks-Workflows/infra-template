@@ -9,7 +9,7 @@ Parameters:
 
   DaysToRetainLogs:
     Description: Number of days to keep logs before deletion.
-    Type: Integer
+    Type: Number
     Default: 7
 
 Resources:
@@ -17,5 +17,5 @@ Resources:
   LogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName: String
-      RetentionInDays: 7
+      LogGroupName: !Ref LogGroupName
+      RetentionInDays: !Ref DaysToRetainLogs
